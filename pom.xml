@@ -12,21 +12,22 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.5.0.RELEASE</version>
         <relativePath/>
-    </parent>
-
+    </parent> 
     <properties>
         
+
         <java.version>11</java.version>
-        
+
         <spring-javaformat-maven-plugin.version>0.0.6
         </spring-javaformat-maven-plugin.version>
-        
+
         <artifactory-maven-plugin.version>2.4.0
         </artifactory-maven-plugin.version>         
-        
-       <spring-cloud.version>2020.0.3-SNAPSHOT</spring-cloud.version>
-       
+
+        <spring-cloud.version>2020.0.3-SNAPSHOT</spring-cloud.version>
+
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -39,11 +40,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.projectreactor</groupId>
-            <artifactId>reactor-test</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
