@@ -24,7 +24,11 @@
         <artifactory-maven-plugin.version>2.4.0
         </artifactory-maven-plugin.version>         
 
-        <spring-cloud.version>2020.0.3-SNAPSHOT</spring-cloud.version>
+<!--
+ todo
+    restore this once there's a stable GA version of Spring Cloud to depend on
+
+ <spring-cloud.version>2020.0.3-SNAPSHOT</spring-cloud.version>-->
 
     </properties>
 
@@ -37,14 +41,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
+     
     </dependencies>
 
-    <dependencyManagement>
+   <!-- <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -54,7 +54,7 @@
                 <scope>import</scope>
             </dependency>
         </dependencies>
-    </dependencyManagement>
+    </dependencyManagement>-->
     <build>
         <pluginManagement>
             <plugins>
@@ -100,9 +100,16 @@
                                     <snapshotRepoKey>libs-snapshot-local
                                     </snapshotRepoKey>
                                 </publisher>
+<!--
+    todo
+        we need to update these to
+        use the right Github Actions
+        environment variables
+
+-->
                                 <buildInfo>
-                                    <agentName>Travis CI</agentName>
-                                    <buildNumber>{{TRAVIS_BUILD_NUMBER}}
+                                    <agentName>Github Actions</agentName>
+                                    <buildNumber>{{BUILD_NUMBER}}
                                     </buildNumber>
                                     <buildUrl>
                                         http://travis-ci.org/{{TRAVIS_REPO_SLUG}}/builds/{{TRAVIS_BUILD_ID}}
